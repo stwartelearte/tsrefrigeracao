@@ -21,9 +21,17 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [])
+
   return (
     <header className={`site-header fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
-      <div className={`header-shell container-shell rounded-full border px-5 transition-all sm:px-7 ${scrolled ? 'is-scrolled border-slate-200/80 bg-white/95 shadow-[0_10px_35px_rgba(13,45,85,.16)] backdrop-blur-xl' : 'border-white/20 bg-[#0a315c]/70 shadow-[0_12px_35px_rgba(7,29,73,.2)] backdrop-blur-md'}`}>
+      <div className={`header-shell container-shell rounded-full border px-5 transition-all sm:px-7 ${open ? 'is-menu-open' : ''} ${scrolled ? 'is-scrolled border-slate-200/80 bg-white/95 shadow-[0_10px_35px_rgba(13,45,85,.16)] backdrop-blur-xl' : 'border-white/20 bg-[#0a315c]/70 shadow-[0_12px_35px_rgba(7,29,73,.2)] backdrop-blur-md'}`}>
         <div className="flex h-[4.25rem] items-center justify-between">
           <Brand />
           <nav className="header-nav hidden items-center gap-7 lg:flex" aria-label="Navegação principal">

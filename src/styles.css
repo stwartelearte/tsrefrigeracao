@@ -86,12 +86,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .header-shell { padding-inline: .7rem; }
   .brand-logo-full { display: none; }
   .brand-logo-compact { display: block; width: 8.2rem; height: 3rem; object-fit: contain; object-position: left center; }
-  .header-top-contact { display: inline-flex; width: 7.6rem; min-height: 2.8rem; padding: .55rem .7rem; font-size: .68rem; line-height: 1.15; text-align: center; }
+  .header-top-contact { display: none; }
   .header-menu-button { width: 2.65rem; height: 2.65rem; }
-  .header-mobile-menu { position: fixed; top: 5.75rem; right: .75rem; bottom: .75rem; left: .75rem; z-index: 60; display: flex; flex-direction: column; align-items: center; overflow-y: auto; border: 1px solid rgba(255,255,255,.16); border-radius: 2rem; background: #032849 !important; background-image: none !important; backdrop-filter: none; padding: 2.5rem 1.25rem 1.5rem; box-shadow: 0 25px 70px rgba(0,20,50,.4); }
-  .header-mobile-menu > a:not(.header-contact) { width: 100%; padding: 1.05rem .75rem; color: white; font-size: .9rem; font-weight: 900; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
-  .header-mobile-menu > a:not(.header-contact):hover { background: rgba(255,255,255,.06); color: #8be7fb; }
-  .header-mobile-menu .header-contact { display: none !important; }
+  .header-shell { position: relative; }
+  .header-shell.is-menu-open { border-radius: 1.25rem; }
+  .header-mobile-menu { position: absolute; top: calc(100% + .45rem); right: -.05rem; left: -.05rem; z-index: 60; display: flex; flex-direction: column; gap: .15rem; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 1.25rem; background: rgba(10,49,92,.7); padding: .65rem; box-shadow: 0 20px 45px rgba(0,20,50,.28); backdrop-filter: blur(12px); }
+  .header-shell.is-scrolled .header-mobile-menu { border-color: rgba(226,232,240,.8); background: rgba(255,255,255,.95); box-shadow: 0 20px 45px rgba(13,45,85,.16); }
+  .header-mobile-menu > a:not(.header-contact) { width: 100%; border-radius: .75rem; padding: 1rem .85rem; color: white; font-size: .82rem; font-weight: 900; letter-spacing: .1em; text-align: left; text-transform: uppercase; }
+  .header-mobile-menu > a:not(.header-contact):hover { background: rgba(255,255,255,.08); color: #8be7fb; }
+  .header-shell.is-scrolled .header-mobile-menu > a:not(.header-contact) { color: #334155; }
+  .header-shell.is-scrolled .header-mobile-menu > a:not(.header-contact):hover { background: #f0f9ff; color: #0879ad; }
+  .header-mobile-menu .header-contact { display: inline-flex; margin-top: .65rem; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
