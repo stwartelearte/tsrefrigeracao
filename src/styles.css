@@ -64,6 +64,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .footer-list { display: grid; gap: .75rem; font-size: .86rem; line-height: 1.5; }
 .footer-list a { transition: color .2s; } .footer-list a:hover { color: #8be7fb; }
 .header-shell:not(.is-scrolled) img { filter: brightness(0) invert(1); }
+.brand-logo-compact { display: none; }
 .brand-logo-inverse { filter: brightness(0) invert(1); }
 .header-nav .nav-link { color: rgba(255,255,255,.88); font-size: .82rem; font-weight: 800; text-transform: uppercase; }
 .header-nav .nav-link:hover { color: #8be7fb; }
@@ -76,12 +77,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .header-mobile-menu { border-color: rgba(255,255,255,.18); color: white; }
 .header-shell.is-scrolled .header-mobile-menu { border-color: #f1f5f9; color: #334155; }
 
-@media (max-width: 639px) {
+@media (max-width: 1023px) {
   .container-shell { width: min(100% - 1.25rem, 1240px); }
   .section-space { padding-block: 4.25rem; }
   .service-card { min-height: auto; }
   .whatsapp-float { width: 3.4rem; height: 3.4rem; }
   .portfolio-grid { grid-auto-rows: 220px; }
+  .header-shell { padding-inline: .7rem; }
+  .brand-logo-full { display: none; }
+  .brand-logo-compact { display: block; width: 8.2rem; height: 3rem; object-fit: contain; object-position: left center; }
+  .header-top-contact { display: inline-flex; width: 7.6rem; min-height: 2.8rem; padding: .55rem .7rem; font-size: .68rem; line-height: 1.15; text-align: center; }
+  .header-menu-button { width: 2.65rem; height: 2.65rem; }
+  .header-mobile-menu { position: fixed; top: 5.75rem; right: .75rem; bottom: .75rem; left: .75rem; z-index: 60; display: flex; flex-direction: column; align-items: center; overflow-y: auto; border: 1px solid rgba(255,255,255,.16); border-radius: 2rem; background: #032849 !important; background-image: none !important; backdrop-filter: none; padding: 2.5rem 1.25rem 1.5rem; box-shadow: 0 25px 70px rgba(0,20,50,.4); }
+  .header-mobile-menu > a:not(.header-contact) { width: 100%; padding: 1.05rem .75rem; color: white; font-size: .9rem; font-weight: 900; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
+  .header-mobile-menu > a:not(.header-contact):hover { background: rgba(255,255,255,.06); color: #8be7fb; }
+  .header-mobile-menu .header-contact { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -2,7 +2,7 @@ import { Mail, Phone, Snowflake } from 'lucide-react'
 import { Brand } from './Brand'
 import { EMAIL, PHONE_DISPLAY } from '../lib/constants'
 
-const quickLinks = [['Início', '#inicio'], ['Sobre', '#sobre'], ['Serviços', '#servicos'], ['Portfólio', '#portfolio'], ['Contato', '#contato']]
+const quickLinks = [['Início', '#inicio'], ['Sobre', '#sobre'], ['Serviços', '#servicos'], ['Portfólio', '#portfolio'], ['Trabalhe conosco', '#trabalhe-conosco'], ['Contato', '#contato']]
 const serviceLinks = ['Instalação', 'Manutenção preventiva', 'Manutenção corretiva', 'Limpeza e higienização', 'Atendimento residencial', 'Atendimento empresarial']
 
 export function Footer() {

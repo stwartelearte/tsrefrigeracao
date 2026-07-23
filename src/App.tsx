@@ -10,6 +10,7 @@ import { Portfolio } from './components/Portfolio'
 import { Process } from './components/Process'
 import { Services } from './components/Services'
 import { WhatsAppButton } from './components/WhatsAppButton'
+import { WorkWithUs } from './components/WorkWithUs'
 import { EMAIL, PHONE_NUMBER } from './lib/constants'
 import { initializeTracking } from './lib/tracking'
 
@@ -40,6 +41,7 @@ export default function App() {
         <Audiences />
         <Process />
         <Portfolio />
+        <WorkWithUs />
         <ContactForm />
         <FinalCTA />
       </main>

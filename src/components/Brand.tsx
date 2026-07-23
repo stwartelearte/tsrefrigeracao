@@ -4,8 +4,9 @@ export function Brand({ inverse = false }: { inverse?: boolean }) {
       <img
         src={`${import.meta.env.BASE_URL}images/Logo.png`}
         alt="TS Refrigeração & Climatização"
-        className={`h-12 w-[185px] object-contain object-left sm:w-[205px] ${inverse ? 'brand-logo-inverse' : ''}`}
+        className={`brand-logo-full h-12 w-[185px] object-contain object-left sm:w-[205px] ${inverse ? 'brand-logo-inverse' : ''}`}
       />
+      <img src={`${import.meta.env.BASE_URL}images/logo-favicon.png`} alt="TS Refrigeração" className="brand-logo-compact" />
     </a>
   )
 }

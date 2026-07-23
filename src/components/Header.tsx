@@ -7,7 +7,7 @@ import { whatsappUrl } from '../lib/constants'
 
 const links = [
   ['Início', '#inicio'], ['Sobre', '#sobre'], ['Serviços', '#servicos'],
-  ['Portfólio', '#portfolio'], ['Contato', '#contato'],
+  ['Portfólio', '#portfolio'], ['Trabalhe conosco', '#trabalhe-conosco'], ['Contato', '#contato'],
 ]
 
 export function Header() {
@@ -29,7 +29,7 @@ export function Header() {
           <nav className="header-nav hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
             {links.map(([label, href]) => <a key={href} href={href} className="nav-link">{label}</a>)}
           </nav>
-          <a href={whatsappUrl()} target="_blank" rel="noreferrer" onClick={() => trackEvent('whatsapp_click', { location: 'header' })} className="header-contact hidden lg:inline-flex">
+          <a href={whatsappUrl()} target="_blank" rel="noreferrer" onClick={() => trackEvent('whatsapp_click', { location: 'header' })} className="header-contact header-top-contact hidden lg:inline-flex">
             <WhatsAppIcon className="size-5" /> Fale conosco
           </a>
           <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Fechar menu' : 'Abrir menu'} className="header-menu-button focus-ring grid size-11 place-items-center rounded-xl lg:hidden">
